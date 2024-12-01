@@ -14,9 +14,8 @@ class Manufacturer(models.Model):
 class Driver(AbstractUser):
     license_number = models.CharField(max_length=255)
 
-    class Meta:
-        def __str__(self) -> str:
-            return self.username
+    def __str__(self) -> str:
+        return f"{self.username}({self.first_name} {self.last_name})"
 
 
 class Car(models.Model):
